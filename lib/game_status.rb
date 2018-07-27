@@ -16,16 +16,15 @@ WIN_COMBINATIONS = [
 ]
 
 def won?(board)
-  WIN_COMBINATIONS.each do |combo| #for each win combination, check if the number located at combo[index] is occuped on the board
-    if board[combo[0]] == "X" && board[combo[1]] == "X" && board[combo[2]] == "X"
+  WIN_COMBINATIONS.select do |wcombo| #for each win combination, check if the number located at combo[index] is occuped on the board
+    if board[combo[0]] == "X" && board[combo[1]] == "X" && board[combo[2]] = "X"
       return combo
     elsif board[combo[0]] == "O" && board[combo[1]] == "O" && board[combo[2]] == "O"
       return combo
     else
-      false
+      return false
     end
   end
-  return false
 end 
 
 def full?(board)
