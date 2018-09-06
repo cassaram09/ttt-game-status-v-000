@@ -17,9 +17,9 @@ WIN_COMBINATIONS = [
 
 def won?(board)
   WIN_COMBINATIONS.select do |wcombo| #for each win combination, check if the number located at combo[index] is occuped on the board
-    if board[combo[0]] == "X" && board[combo[1]] == "X" && board[combo[2]] = "X"
+    if combo[0] && combo[1] && combo[2] = "X"
       return combo
-    elsif board[combo[0]] == "O" && board[combo[1]] == "O" && board[combo[2]] == "O"
+    elsif combo[0] && combo[1] && combo[2] == "O"
       return combo
     else
       return false
@@ -50,7 +50,7 @@ def over?(board)
   if won?(board) == true || draw?(board) == true || full?(board) == true
     return true
   end
-end 
+end
 
 def winner(board)
   if won?(board) != false
