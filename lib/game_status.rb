@@ -16,7 +16,7 @@ WIN_COMBINATIONS = [
 ]
 
 def won?(board)
-  WIN_COMBINATIONS.select do |wcombo| #for each win combination, check if the number located at combo[index] is occuped on the board
+  WIN_COMBINATIONS.select do |combo| #for each win combination, check if the number located at combo[index] is occuped on the board
     if combo[0] && combo[1] && combo[2] = "X"
       return combo
     elsif combo[0] && combo[1] && combo[2] == "O"
@@ -25,7 +25,7 @@ def won?(board)
       return false
     end
   end
-end 
+end
 
 def full?(board)
   board.each_with_index do |position, index|
